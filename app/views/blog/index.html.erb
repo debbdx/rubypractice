@@ -1,0 +1,18 @@
+<h1>Hello, Simple Blog!</h1>
+<form action="/blog/create">
+    <pre>
+    <input type="text" name="name" placeholder="writer">
+    <input type="text" name="title" placeholder="title">
+    <textarea name="contents">
+    </textarea>
+    </pre>
+    <input type="submit">
+</form>
+
+
+<% @posts.each do |p| %>
+    <li> <%=p.writer%><br> : <%=p.title%>
+    <a href="/blog/contents?id=<%=p.id%>">see</a>
+    <a href="/blog/destroy?id=<%=p.id%>">delete</a>
+    </li>
+<% end %>
